@@ -2,7 +2,7 @@ baseurl: '/'
 title: All Systems Go!
 theme: asg
 languageCode: en-us
-copyright: © 2018 All Systems Go! Team
+copyright: © All rights reserved - All Systems Go 2019
 pluralizelisttitles: 'false'
 
 author:
@@ -14,6 +14,10 @@ params:
   Author: All Systems Go! Team
   Email: org-team@all-systems-go.io
   Subtitle: The foundational user-space Linux conference
+
+  ticketsLink: https://ti.to/all-systems-go/all-systems-go-2019
+  participationLink: ""
+  sponsorshipLink: ""
 
   hero:
     eventDate: Sept.28-30, 2019
@@ -89,6 +93,73 @@ params:
     - title: youtube
       url: 'https://www.youtube.com/channel/UCeLpDT5afyiwdbbg1EOxOtQ'
       image: 'youtube-icon'
+
+  sponsors:
+  - type: Solar
+    sponsors:
+    - name: Facebook
+      link: https://facebook.com
+      logo: facebook.svg
+    - name: Kinvolk
+      link: https://kinvolk.io
+      logo: kinvolk.svg
+    - name: redhat
+      link: https://www.redhat.com
+      logo: redhat.svg
+  - type: Terrestrial
+    sponsors:
+    - name: Microsoft
+      link: https://www.microsoft.com
+      logo: microsoft.svg
+    - name: avm
+      link: https://avm.de/
+      logo: avm.svg
+    - name: axis
+      link: https://www.axis.com
+      logo: axis.svg
+    - name: opensuse
+      link: https://www.opensuse.org/
+      logo: open-suse.svg
+    - name: pantheon
+      link: https://pantheon.io/
+      logo: pantheon.svg
+    - name: amazon
+      link: https://www.amazon.com/
+      logo: amazon.svg
+    - name: collabora
+      link: https://www.collabora.com/
+      logo: g10.svg
+  - type: In kind
+    sponsors:
+    - name: Manning Publications
+      link: https://www.manning.com/
+      logo: manning.svg
+    - name: O'Reilly
+      link: https://www.oreilly.com/
+      logo: o-reilly.svg
+
+  lookBack:
+    year: 2018
+    description: 2018 was the inaugural edition of All Systems Go!. We welcomed over 200
+            attendees for 2 days of talks, discussions and collaborating. We captured some of that in the photos and
+            videos below.
+    gallery:
+      - image: conference-photo1.jpg
+      - image: conference-photo2.jpg
+      - image: conference-photo3.jpg
+      - image: conference-photo4.jpg
+      - image: conference-photo5.jpg
+      - image: conference-photo6.jpg
+      - image: conference-photo7.jpg
+      - image: conference-photo8.jpg
+      - image: conference-photo9.jpg
+
+  venue:
+    description: All Systems Go! takes place in the heart of Berlin at Spreewerkstätten,a short
+          walk from Alexanderplatz and directly on the river Spree.
+    place: Molkenmarkt 2, 10179, Berlin
+    map: map.png
+    logo: sws-logo-black.svg
 
 menu:
   main:

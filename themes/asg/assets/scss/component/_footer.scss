@@ -17,18 +17,18 @@
     background-color: $colorWhite;
     opacity: 0.3;
   }
+
+  .social__link + .social__link {
+    margin-left: 24px;
+  }
+  
+  .social__link:hover {
+    opacity: 0.8
+  }
 }
 
 .footer__copyright {
   margin-right: 5vw;
   font-size: 1.4rem;
   line-height: 1.8em;
-}
-
-.footer__social-link + .footer__social-link {
-  margin-left: 24px;
-}
-
-.footer__social-link:hover {
-  opacity: 0.8
 }

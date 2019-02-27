@@ -38,9 +38,31 @@
     {{ end }}
     </section>
 
+    <section class="speakers" id="speakers">
+      <h2 class="speakers__title page-title">Featured speakers</h2>        
+      <div class="speakers__swiper-container">
+        <div class="speakers__list swiper-wrapper">
+          {{ with .Site.Data.speakers }}
+          {{ range .speakers }}
+          <div class="speakers__item swiper-slide">
+            <img class="speakers__photo" src="/images/speakers/{{ .image }}" width="260" height="260" alt="speaker photo"
+              draggable="false">
+            <img class="speakers__background" src="/images/icons/arrows-speakers.svg" alt="">
+            <p class="speakers__name">{{ .name }}</p>
+            <div class="speakers__company">
+              <span>{{ .company }}:</span>
+              <span>{{ .projects }}</span>
+            </div>
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </section>
+
     <section class="tickets">
       <h2 class="tickets__title page-title">tickets</h2>
-      <p class="tickets__text">Tickets are now available! <a class="tickets__link" href="#">Get yours here.</a></p>
+      <p class="tickets__text">Tickets are now available! <a class="tickets__link" href="{{ .Site.Params.ticketsLink }}" target="_blank">Get yours here.</a></p>
 
       <div class="tickets__wrapper">
         {{ range .Site.Params.tickets }}
@@ -95,10 +117,102 @@
             {{ end }}
           </ul>
           {{ end }}
-          <a class="participation__link" href="#" target="_blank">Submit your presentation</a>
+          <a class="participation__link" href="{{ .Site.Params.participationLink }}" target="_blank">Submit your presentation</a>
         </div>
       </section>
     </div>
+
+    <section class="sponsors" id="sponsor">
+      <h2 class="sponsors__title page-title">sponsors</h2>
+      {{ if and (isset .Site.Params "sponsors") (gt (len .Site.Params.sponsors) 0) }} 
+      <p class="sponsors__description">All Systems Go! is only possibly because of the generous support from these
+          sponsors.</p>
+      {{ range .Site.Params.sponsors }}
+          <div class="sponsors__block">
+            <h3>{{ .type }}:</h3>
+            <ul class="sponsors__list">
+              {{ range .sponsors }}
+                <li class="sponsors__item">
+                  <a href="{{ .link }}" target="_blank">
+                    <img src="/images/sponsors/{{ .logo }}" alt="{{ .logo }}" class="sponsor__image">
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+      {{ end }}
+      <a class="sponsors__link" href="{{ .Site.Params.sponsorshipLink }}">Read our sponsorship opportunities</a>
+    </section>
+
+    <section class="look-back">
+      <div class="look-back__container">
+        {{ with .Site.Params.lookBack }}
+        <h2 class="look-back__title page-title">A look back at {{ .year }}</h2>
+        <div class="look-back__wrapper">
+          <p class="look-back__description">{{ .description }}</p>
+          <a class="look-back__button btn" href="https://www.flickr.com/photos/139110107@N04/sets/72157706243921245"
+            target="_blank">
+            <img src="/images/icons/flickr-icon.svg" alt="flickr icon">
+          </a>
+        </div>
+      </div>
+      <div class="look-back__swiper-container">
+        <div class="swiper-wrapper">
+          {{ range .gallery }}
+          <img class="swiper-slide look-back__img" src="/images/gallery/{{ .image }}" alt="conference photo">
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </section>
+
+    <section class="video-content">
+      <h2 class="video-content__title page-title">Talks from 2018</h2>
+      <div class="video-content__wrapper">
+        <iframe width="1024" height="768" src="https://www.youtube.com/embed/videoseries?list=PLWYdJViL9Eio5o5j4Uth_-Mt0FPrYXNwx"
+          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="">
+        </iframe>
+      </div>
+    </section>
+
+    <section class="venue">
+      <div class="venue__map-wrapper">
+          {{ with .Site.Params.venue }}
+        <div class="venue__map">
+          <img class="venue__map-image" src="/images/{{ .map }}" alt="map" draggable="false">
+        </div>
+        <div class="venue__map-wrapper-iner">
+          <img src="/images/icons/{{ .logo }}" alt="logo" draggable="false">
+          <div class="venue__block">
+            <h4>Zentrale Lage</h4>
+            <p>{{ .place }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="venue__content-wrapper">
+        <h2 class="venue__title page-title">Venue</h2>
+        <p class="venue__description">{{ .description }}</p>
+
+        {{ end }}
+
+        <form class="venue__form validate" action="https://all-systems-go.us14.list-manage.com/subscribe/post?u=1357cb4149750098f861b3a0d&amp;id=727559bb60"
+          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+          <label for="input">Sign up for newsletter</label>
+          <input class="required email" value="" type="email" id="input" name="EMAIL" placeholder="Enter your email address"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1357cb4149750098f861b3a0d_727559bb60"
+              tabindex="-1" value=""></div>
+          <div id="mce-responses" class="clear">
+            <div class="response response-error" id="mce-error-response" style="display:none"></div>
+            <div class="response response-success" id="mce-success-response" style="display:none"></div>
+          </div>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <button class="venue__form--button button button--submit" type="submit" name="subscribe" id="mc-embedded-subscribe"
+            disabled>Submit</button>
+        </form>
+      </div>
+    </section>
 </main>
 
 {{ partial "footer.html" . }}

@@ -109,4 +109,78 @@
     },
     "retina_detect": true
   });
+
+// swiper gallery
+
+  var swiper = new Swiper('.look-back__swiper-container', {
+    slidesPerView: 'auto',
+    spaceBetween: 50,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+    speed: 3000
+  });
+
+  const DESKTOP_SCREEN_WIDTH = 1024;
+const menuLinkArray = document.querySelectorAll(".menu__link");
+
+  menuLinkArray.forEach(link => {
+    link.addEventListener("click", function (event) {
+      const id = this.getAttribute("href").slice(1);
+
+      const activeLink = document.querySelector(".menu__link--active");
+
+      if (activeLink) {
+        activeLink.classList.remove("menu__link--active");
+      }
+
+      this.classList.add("menu__link--active");
+
+      if (id.length > 0) {
+        event.preventDefault();
+
+        const headerHeight = 140;
+        const scrollingPosition =
+          document.getElementById(id).offsetTop - headerHeight;
+
+        $("body, html").animate({
+            scrollTop: scrollingPosition
+          },
+          1000
+        );
+
+        if ($(document).width() < DESKTOP_SCREEN_WIDTH) {
+          $(".header").removeClass("header--open");
+        }
+      }
+    });
+  });
+
+  
+  let controller = new ScrollMagic.Controller();
+
+  if($("body").hasClass("main-page")) {
+    
+    
+  const sectionArray = document.querySelectorAll("#schedule, #sponsor, #conduct, #speakers");
+
+  sectionArray.forEach(section => {
+    new ScrollMagic.Scene({
+        triggerElement: "#" + section.getAttribute("id"),
+        triggerHook: 0.5,
+        duration: section.offsetHeight
+      })
+      .setClassToggle(
+        `a[href="#${section.getAttribute("id")}"]`,
+        "menu__link--active"
+      )
+      .addTo(controller);
+  });
+  }
+
+  // form validation 
+  document.querySelector(".email").addEventListener("input", function () {
+    document.querySelector(".venue__form--button").disabled = !this.validity.valid;
+  });
 })();
