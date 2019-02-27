@@ -1,13 +1,6 @@
-{{ partial "header.html" . }}
-
-    <!-- Main Content -->
-    <article>
-    <div class="container">
-        <div class="row">
-            <div class="">
-              {{ .Content }}
-            </div>
-        </div>
-    </div>
-    </article>
+{{- partial "head.html" . -}}
+{{- partial "header.html" . -}}
+<main class="{{ .Params.pageName }}">
+    {{ .Content }}
+</main>
 {{ partial "footer.html" . }}

@@ -1,5 +1,104 @@
-{{ partial "frontpage_header.html" .}}
+{{ partial "head.html" . }}
 
-{{ .Content }}
+<div id="particles-js"></div>
 
-{{ partial "footer.html" .}}
+{{ partial "frontpage_header.html" . }}
+
+<main>
+  <section class="hero">
+      <div class="hero__social">
+      
+        {{ partial "socials.html" . }}
+        
+      </div>
+      <div class="hero__image-wrapper">
+        <img src="/images/hero-image.svg" alt="hero image" draggable="false">
+      </div>
+      <img class="hero__scroll-icon" src="/images/icons/mouse-icon.svg" width="20" height="30" alt="mouse icon"
+        draggable="false">
+    </section>
+
+    <section class="about">
+      <p class="about__description">{{ .Site.Params.Event.description }}</p>
+    </section>
+
+    <section class="schedule" id="schedule">
+      <h2 class="schedule__title page-title">schedule for september 2019</h2>
+      <a class="schedule__link" href="/code-of-conduct">Read our code of conduct</a>
+      {{ range .Site.Params.events }}
+      <div class="schedule__event-block">
+        <p class="schedule__event-day">{{.date}}</p>
+        {{ range .event }}
+          <div class="schedule__event-row">
+            <span class="schedule__event-time">{{ .time }}</span>
+            <span class="schedule__event">{{ .title }} <span class="schedule__event-place">({{ .place }})</span></span>
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+    </section>
+
+    <section class="tickets">
+      <h2 class="tickets__title page-title">tickets</h2>
+      <p class="tickets__text">Tickets are now available! <a class="tickets__link" href="#">Get yours here.</a></p>
+
+      <div class="tickets__wrapper">
+        {{ range .Site.Params.tickets }}
+          <div class="tickets__block">
+            <h3 class="tickets__sub-title">{{ .type }}:</h3>
+            <ul class="tickets__list">
+              <li class="tickets__item tickets__item--{{ .type }}">
+                <div>Early</div>
+                <div class="tickets__price">{{ .price.early }}</div>
+              </li>
+              <li class="tickets__item tickets__item--{{ .type }}">
+                <div>standard</div>
+                <div class="tickets__price">{{ .price.standard }}</div>
+              </li>
+              <li class="tickets__item tickets__item--{{ .type }}">
+                <div>Late</div>
+                <div class="tickets__price">{{ .price.late }}</div>
+              </li>
+            </ul>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="conduct" id="conduct">
+        <div class="conduct__wrapper">
+          <h2 class="conduct__title page-title">Code of Conduct</h2>
+          {{ with .Site.GetPage "code-of-conduct" }}
+          <p class="conduct__description">{{ .Params.description }}</p>
+          {{ end }}
+          <a class="conduct__link" href="/code-of-conduct">Read our code of conduct</a>
+        </div>
+        <div class="conduct__photo-wrapper">
+          <img class="conduct__photo" src="/images/code-of-conduct.png" width="360" height="573" alt="man telling about conduct"
+            draggable="false">
+        </div>
+      </section>
+
+      <section class="participation">
+        <div class="participation__photo-wrapper">
+          <img class="participation__photo" src="/images/participation-photo.png" width="360" height="573"
+            alt="man telling about conduct" draggable="false">
+        </div>
+        <div class="participation__wrapper">
+          <h2 class="participation__title page-title">Call for Participation</h2>
+          {{ with .Site.Params.participation }}
+          <p class="participation__description">{{ .description }}</p>
+          <ul class="participation__list">
+            {{ range .topics }}
+            <li class="participation__item">{{ . }}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
+          <a class="participation__link" href="#" target="_blank">Submit your presentation</a>
+        </div>
+      </section>
+    </div>
+</main>
+
+{{ partial "footer.html" . }}
