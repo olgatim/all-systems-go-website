@@ -1,7 +1,9 @@
 .hero {
+  box-sizing: border-box;
   width: 100%;
   display: flex;
   padding: 175px 30px 50px;
+  height: 100vh;
 
   justify-content: space-between;
   align-items: flex-end;
@@ -18,8 +20,10 @@
 .hero__scroll-icon {
   width: 20px;
   height: 30px;
+}
 
-  animation: mouse 2s ease infinite;
+.hero__scroll-icon--mobile {
+  display: none;
 }
 
 .hero__social {
@@ -62,18 +66,74 @@
   }
 }
 
+@media (min-resolution: 192dpi) and (min-width: 1920px) { 
+  .hero {
+    height: 100vh;
+    padding-bottom: 100px;
+  }
+  .hero__image-wrapper {
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
+.mouse-animation {
+  animation: mouse 1.5s infinite;
+}
 
 @keyframes mouse {
   0% {
-    opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-5px);
   }
   50% {
     opacity: 1;
     transform: translateY(0);
   }
   100% {
-    opacity: 0;
     transform: translateY(10px);
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .hero {
+    box-sizing: border-box;
+    padding-top: 140px;
+    padding-bottom: 80px;
+  }
+
+  .hero__image-wrapper {
+    align-self: flex-start;
+  }
+  .hero__social {
+    display: none;
+  }
+
+  .hero__scroll-icon {
+    display: none;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .hero {
+    padding:100px 20px 0;
+    height: 100vh;
+  }
+  .hero__image-wrapper {
+    margin: 0 auto;
+    align-self: center;
+  }
+  .hero__scroll-icon--mobile {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@media (orientation: landscape) and (max-width:767px) {
+  .hero {
+    padding-top: 100px;
+    height: 100%;
+    padding-bottom: 30px;
   }
 }

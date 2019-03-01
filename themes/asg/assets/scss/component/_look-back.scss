@@ -58,3 +58,43 @@
   width: auto;
   cursor: pointer;
 }
+
+@include media-breakpoint-down(md) {
+  .look-back {
+    padding-bottom: 80px;
+  }
+  .look-back__title {
+    font-size: 3rem;
+  }
+
+  .look-back__description {
+    font-size: 1.6rem;
+    max-width: 460px;
+  }
+  .look-back__container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .look-back__container:before {
+    left: 20px;
+    transform: scale(0.8);
+  }
+  .look-back__img {
+    max-height: 200px;
+  }
+}
+
+@include media-breakpoint-down(sm){
+  .look-back__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .look-back__description {
+    margin-bottom: 30px;
+  }
+  .look-back__img {
+    max-height: 180px;
+  }
+}

@@ -85,6 +85,7 @@
 @include media-breakpoint-down(md) {
   .speakers {
     padding:0 20px 80px;
+    margin-bottom: 40px;
   }
   .speakers__title {
     margin-bottom: 60px;
@@ -118,10 +119,14 @@
   .speakers__background {
     max-width: 250px;
     left: calc(50% - 125px);
+    top: 2%;
   }
 }
 
 @include media-breakpoint-down(sm) {
+  .speakers__company span {
+    display: inline-block;
+  }
   .speakers__name {
     font-size: 1.6rem;
   }

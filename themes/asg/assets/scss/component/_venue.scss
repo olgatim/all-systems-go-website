@@ -110,8 +110,9 @@
   border: none;
   background-color: transparent;
   outline: none;
-  border-bottom: 4px solid $colorWhite;
-
+  box-shadow: 0 4px 0 0 $colorWhite;
+  border-radius: 0;
+  -webkit-appearance: none;
 }
 
 .venue__form input::placeholder {
@@ -135,6 +136,79 @@
   color: #FF0000;
 }
 
+
+@include media-breakpoint-down(md){
+  .venue {
+    align-items: stretch;
+  }
+  .venue__title {
+    margin-top: 15px;
+  }
+  .venue__title::before {
+    transform: rotate(-90deg) scale(.6);
+    left: 110px;
+  }
+  .venue__description {
+    margin-bottom: auto;
+    font-size: 1.6rem;
+  }
+  .venue__content-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .venue__map-wrapper-iner img {
+    display: block;
+    max-width: 40%;
+    height: auto;
+  }
+  .venue__block h4 {
+    font-size: 1.6rem;
+  }
+  .venue__form {
+    margin-bottom: 10px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .venue {
+    position: relative;
+    flex-direction: column;
+    padding-top: 100px;
+  }
+  .venue__map-wrapper {
+    margin: 0 auto 30px;
+  }
+  .venue__map-wrapper-iner {
+    justify-content: space-around;
+  }
+  .venue__content-wrapper {
+    max-width: 100%;
+  }
+  .venue__title {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 60px);
+  }
+  .venue__description {
+    margin-bottom: 40px;
+  }
+  .venue__form {
+    margin-bottom:0;
+  }
+  .venue__form--button {
+    bottom: 0;
+    margin-top: 30px;
+  }
+  .response {
+    bottom: -10px;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .venue__map-wrapper {
+    padding: 5px;
+  }
+}
 
 @keyframes pin {
   0% {

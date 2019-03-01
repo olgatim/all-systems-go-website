@@ -107,3 +107,46 @@
 .sponsors__link:hover::before {
   transform: scale(1.1) scaleY(2.4);
 }
+
+@include media-breakpoint-down(md) {
+  .sponsors {
+    padding-bottom: 80px;
+  }
+  .sponsors__item img {
+    max-width: 120px;
+  }
+  .sponsors__title {
+    margin-bottom: 75px;
+
+    &::before{
+      width: 200px;
+      height: 200px;
+      left: calc(50% - 100px);
+      top: -118px;
+      background-size: contain;
+    }
+  }
+  .sponsors__description {
+    margin-bottom: 60px;
+    font-size: 1.6rem;
+  }
+  .sponsors__item {
+    width: 33%;
+  }
+  .sponsors__link {
+    font-size: 1.4rem;
+    &::after {
+      height: 50px;
+      top: calc(50% - 25px);
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .sponsors__item {
+    width: 50%;
+  }
+  .sponsors__link span {
+    display: none;
+  }
+}

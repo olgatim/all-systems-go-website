@@ -64,6 +64,23 @@ a.btn {
   }
 }
 
+@include media-breakpoint-down(sm) {
+  .button--submit {
+    position: relative;
+    width: 280px;
+    height: 55px;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    color: $colorWhite;
+    font-weight: $fontBold;
+    border-radius: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
 .button--submit:focus{
   outline: none;
 }
