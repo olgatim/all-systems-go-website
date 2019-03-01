@@ -1,0 +1,147 @@
+.venue {
+  max-width: 1130px;
+  padding: 0 20px 90px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.venue__map-wrapper {
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 530px;
+  padding: 16px;
+  margin-right: 3vw;
+
+  border: 4px solid $colorWhite;
+}
+
+.venue__map {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    top: 59%;
+    left: 56%;
+    background-image: url("../../images/icons/map-pin.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    animation: pin 1.5s ease infinite;
+  }
+}
+
+.venue__map-wrapper-iner {
+  display: flex;
+  margin-top: 23px; 
+  align-items: center;
+}
+
+.venue__map-wrapper-iner img {
+  width: auto;
+  height: 38px;
+}
+
+.venue__block {
+  margin-left: 4vw;
+}
+.venue__block h4 {
+  font-size: 1.8rem;
+  font-weight: $fontBold
+}
+
+.venue__block p {
+  font-size: 1.4rem;
+}
+
+.venue__content-wrapper {
+  width: 100%;
+  max-width: 460px;
+}
+
+.venue__title {
+  margin: 20px 0 30px;
+  position: relative;
+  width: 220px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 100%;
+    background-image: url("../../images/icons/arrow-red.svg");
+    background-repeat: no-repeat;
+    transform: rotate(-90deg) scale(0.8);
+  }
+}
+
+.venue__description {
+  margin-bottom: 80px;
+  font-size: 1.8rem;
+  line-height: 1.6em;
+}
+
+.venue__form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.venue__form label {
+  margin-bottom: 30px;
+  font-weight: $fontBold;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.venue__form input {
+  padding-bottom: 20px;
+
+  font-size: 1.6rem;
+  color: $colorWhite;
+
+  border: none;
+  background-color: transparent;
+  outline: none;
+  border-bottom: 4px solid $colorWhite;
+
+}
+
+.venue__form input::placeholder {
+  font-size: 1.6rem;
+  opacity: 0.5;
+}
+
+.response {
+  position: absolute;
+  font-size: 1.4rem;
+  bottom: -50px;
+  @include media-breakpoint-down(sm){
+    position: relative;
+    margin-bottom: 10px;
+  }
+}
+.response-success {
+  color: #28a745;
+}
+.response-error {
+  color: #FF0000;
+}
+
+
+@keyframes pin {
+  0% {
+    transform: translateY(-20px)
+  }
+
+  100% {
+    transform: translateY(0px)
+  }
+}
