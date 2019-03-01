@@ -16,7 +16,7 @@ params:
   Subtitle: The foundational user-space Linux conference
 
   ticketsLink: https://ti.to/all-systems-go/all-systems-go-2019
-  participationLink: ""
+  participationLink: https://cfp.all-systems-go.io
   sponsorshipLink: ""
 
   hero:
@@ -100,12 +100,12 @@ params:
     - name: Facebook
       link: https://facebook.com
       logo: facebook.svg
-    - name: Kinvolk
-      link: https://kinvolk.io
-      logo: kinvolk.svg
     - name: redhat
       link: https://www.redhat.com
       logo: redhat.svg
+    - name: Kinvolk
+      link: https://kinvolk.io
+      logo: kinvolk.svg
   - type: Terrestrial
     sponsors:
     - name: Microsoft

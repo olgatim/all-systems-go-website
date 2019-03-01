@@ -12,10 +12,23 @@
         
       </div>
       <div class="hero__image-wrapper">
-        <img src="/images/hero-image.svg" alt="hero image" draggable="false">
+        <picture>
+          <source srcset="/images/hero-image-mobile.svg" media="(max-width: 767px)">
+          <img src="/images/hero-image.svg" alt="hero image" draggable="false">
+        </picture>
+        <div class="hero__scroll-icon hero__scroll-icon--mobile">
+          <svg width="20" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1.5" y="1.5" width="17" height="27" rx="8.5" stroke="white" stroke-width="3"/>
+            <rect class="mouse-animation" x="8" y="7" width="4" height="7" rx="2" fill="white"/>
+            </svg>          
+        </div>
       </div>
-      <img class="hero__scroll-icon" src="/images/icons/mouse-icon.svg" width="20" height="30" alt="mouse icon"
-        draggable="false">
+      <div class="hero__scroll-icon">
+        <svg width="20" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.5" y="1.5" width="17" height="27" rx="8.5" stroke="white" stroke-width="3"/>
+          <rect class="mouse-animation" x="8" y="7" width="4" height="7" rx="2" fill="white"/>
+          </svg>          
+      </div>
     </section>
 
     <section class="about">
@@ -57,12 +70,13 @@
           {{ end }}
           {{ end }}
         </div>
+        <div class="swiper-pagination"></div>
       </div>
     </section>
 
     <section class="tickets">
       <h2 class="tickets__title page-title">tickets</h2>
-      <p class="tickets__text">Tickets are now available! <a class="tickets__link" href="{{ .Site.Params.ticketsLink }}" target="_blank">Get yours here.</a></p>
+      <div class="tickets__text"><span>Tickets are now available!</span> <a class="tickets__link" href="{{ .Site.Params.ticketsLink }}">Get yours here.</a></div>
 
       <div class="tickets__wrapper">
         {{ range .Site.Params.tickets }}
@@ -142,7 +156,7 @@
           </div>
         {{ end }}
       {{ end }}
-      <a class="sponsors__link" href="{{ .Site.Params.sponsorshipLink }}">Read our sponsorship opportunities</a>
+      <a class="sponsors__link" href="{{ .Site.Params.sponsorshipLink }}"><span>Read our </span>sponsorship opportunities</a>
     </section>
 
     <section class="look-back">

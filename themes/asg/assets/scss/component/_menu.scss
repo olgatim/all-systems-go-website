@@ -1,6 +1,7 @@
 .menu {
-  display: none;
   width: 100%;
+  position: absolute;
+  transform: translateX(-120%);
   
   @include media-breakpoint-up(lg) {
     width: auto;
@@ -10,15 +11,13 @@
 }
 
 .header--open .menu {
-  display: block;
-  height: 100vh;
+  position: relative;
+  transform: translateX(0);
 }
 
 .menu__list {
   display: flex;
   flex-direction: column;
-  padding-top: 20vh;
-
   text-align: center;
 
   @include media-breakpoint-up(lg) {
@@ -29,7 +28,7 @@
 }
 
 .menu__item {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 
   font-weight: $fontBold;
 
@@ -38,11 +37,13 @@
   @include media-breakpoint-up(lg) {
     width: 100%;
     margin-bottom: 0;
-    margin-right: 40px;
 
     &--mobile {
       display: none;
     }
+  }
+  @include media-breakpoint-up(xl){
+    margin-right: 40px;
   }
 }
 
@@ -75,4 +76,12 @@
 
 .menu__link--active{
   color: $colorRed;
+}
+
+@media (orientation: landscape) {
+
+  .menu__item {
+    margin-bottom: 5px;
+  }
+
 }

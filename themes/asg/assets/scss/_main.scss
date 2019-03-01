@@ -88,3 +88,26 @@ canvas {
   right: 0;
   z-index: -1;
 }
+
+@include media-breakpoint-down(md) {
+  .page-title {
+    font-size: 3.2rem;
+    letter-spacing: 4px;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .swiper-pagination {
+    display: none;
+  }
+}
+.swiper-pagination-bullet {
+  background: $colorGrey;
+  opacity: 0.8;
+}
+.swiper-pagination-bullet-active {
+  background: $colorBlue;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets {
+  bottom: 30px;
+}
