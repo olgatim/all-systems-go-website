@@ -175,3 +175,9 @@
     display: block;
   }
 }
+
+@media (min-width: 2560px) {
+  .schedule__title {
+    transform: scale(1.2);
+  }
+}

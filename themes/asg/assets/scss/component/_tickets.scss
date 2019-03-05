@@ -219,3 +219,14 @@
     align-items: center;
   }
 }
+
+@media (min-width: 2560px) {
+  .tickets {
+    max-width: 1350px;
+    padding-bottom: 300px;
+  }
+
+  .tickets__title {
+    transform: scale(1.2);
+  }
+}

@@ -77,7 +77,6 @@ a:hover {
 
 canvas {
   display: block;
-  vertical-align: bottom;
 }
 
 #particles-js {
@@ -110,4 +109,22 @@ canvas {
 
 .swiper-container-horizontal>.swiper-pagination-bullets {
   bottom: 30px;
+}
+
+.social__ico{
+  fill: #fff;
+
+  transition: fill 0.5s;
+}
+
+a:hover .twitter-icon {
+  fill: #4BABE7;
+}
+
+a:hover .youtube-icon {
+  fill: #EA3323;
+}
+
+a:hover .fb-icon {
+  fill: #405898;
 }

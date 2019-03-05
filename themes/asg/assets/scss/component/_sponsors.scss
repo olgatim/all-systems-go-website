@@ -64,38 +64,33 @@
 
 .sponsors__link {
   position: relative;
-  padding: 2px 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding: 2px 35px;
   line-height: 2em;
   font-size: 1.6rem;
   text-transform: uppercase;
   font-weight: $fontBold;
   letter-spacing: 2px;
+  background-image: url("../../images/btn-bg-left.svg"), url("../../images/btn-bg-right.svg") ;
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+  background-size:contain;
 
 
   &::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    width: 90%;
+    height: 50%;
+    top: 25%;
+    left: 5;
     background-color: $colorRed;
     z-index: -1;
 
     transition: transform 0.3s;
-  }
-
-  &::after{
-    content: "";
-    position: absolute;
-    width: 106%;
-    height: 60px;
-    top: calc(50% - 30px);
-    left: -3%;
-    background-image: url("../../images/btn-bg.svg");
-    background-repeat: no-repeat;
-    background-size:100% 100%;
-    z-index: -1;
   }
 }
 
@@ -105,7 +100,7 @@
 }
 
 .sponsors__link:hover::before {
-  transform: scale(1.1) scaleY(2.4);
+  transform: scale(1.15) scaleY(2.4);
 }
 
 @include media-breakpoint-down(md) {
@@ -136,9 +131,20 @@
   .sponsors__link {
     font-size: 1.4rem;
     &::after {
+      width: 110%;
       height: 50px;
       top: calc(50% - 25px);
+      left: -5%;
     }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .sponsors__link:hover::before {
+    transform: scale(1);
+  }
+  .sponsors__link:focus {
+    outline: none;
   }
 }
 
@@ -148,5 +154,16 @@
   }
   .sponsors__link span {
     display: none;
+  }
+
+  .sponsors__link {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .sponsors{
+    margin-bottom: 300px;
+    transform: scale(1.2);
   }
 }

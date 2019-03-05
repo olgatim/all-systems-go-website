@@ -88,3 +88,16 @@
   }
 }
 
+@media (min-width: 2560px) {
+  .video-content {
+    margin-bottom: 200px;
+    max-width: 1400px;
+  }
+
+  .video-content__title {
+    transform: scale(1.2);
+  }
+  .video-content__wrapper {
+    max-width: 100%;
+  } 
+}

@@ -77,3 +77,9 @@
     line-height: 1.8em;
   }
 }
+
+@media (min-width: 2560px) {
+  .about {
+    transform: scale(1.2);
+  }
+}
