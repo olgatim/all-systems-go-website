@@ -121,7 +121,7 @@
   // swiper gallery
 
   function initGallerySwiper() {
-    var swiper = new Swiper(".look-back__swiper-container", {
+    let swiper = new Swiper(".look-back__swiper-container", {
       slidesPerView: "auto",
       spaceBetween: 50,
       autoplay: {
@@ -134,34 +134,34 @@
 
   initGallerySwiper();
 
-  function initSpeakerSwiper() {
-    var swiper1 = new Swiper(".speakers__swiper-container", {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 30,
-      observer: true,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets"
-      },
-      on: {
-        resize: function () {
-          if (window.innerWidth >= DESKTOP_SCREEN_WIDTH) {
-            this.destroy(false, true);
-          }
-          if (window.innerWidth < DESKTOP_SCREEN_WIDTH) {
-            this.init();
-          }
-          this.update();
+  let mySwiper = null;
 
-        },
-      }
-    });
+  function initSwiper() {
+    let screenWidth = $(window).width();
+    if (screenWidth < DESKTOP_SCREEN_WIDTH && mySwiper === null) {
+      mySwiper = new Swiper(".speakers__swiper-container", {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 30,
+        observer: true,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets"
+        }
+      });
+    } else if (screenWidth >= DESKTOP_SCREEN_WIDTH && mySwiper !== null) {
+      mySwiper.destroy();
+      mySwiper = null;
+      $(".swiper-wrapper").removeAttr("style");
+      $(".swiper-slide").removeAttr("style");
+    }
   }
 
-  if (window.innerWidth < DESKTOP_SCREEN_WIDTH) {
-    initSpeakerSwiper();
-  }
+  initSwiper();
+
+  $(window).on("resize", function () {
+    initSwiper();
+  });
 
   const menuLinkArray = document.querySelectorAll(".menu__link");
 

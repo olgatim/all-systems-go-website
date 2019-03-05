@@ -98,3 +98,10 @@
     max-height: 180px;
   }
 }
+
+@media (min-width: 2560px) {
+  .look-back{
+    margin-bottom: 200px;
+    transform: scale(1.2);
+  }
+}

@@ -32,7 +32,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    animation: pin 1.5s ease infinite;
+    animation: pin 3s ease infinite;
   }
 }
 
@@ -210,12 +210,22 @@
   }
 }
 
+@media (min-width: 2560px) {
+  .venue {
+    padding-bottom: 150px;
+    transform: scale(1.2);
+  }
+}
+
 @keyframes pin {
   0% {
     transform: translateY(-20px)
   }
 
-  100% {
+  50% {
     transform: translateY(0px)
+  }
+  100% {
+    transform: translateY(-20px)
   }
 }

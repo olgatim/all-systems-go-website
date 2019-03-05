@@ -142,3 +142,13 @@
     left: 3%;
   }
 }
+
+@media (min-width: 2560px) {
+  .speakers {
+    max-width: 1400px;
+  }
+  .speakers__title {
+    margin-bottom: 200px;
+    transform: scale(1.2);
+  }
+}

@@ -21,10 +21,6 @@
   .social__link + .social__link {
     margin-left: 24px;
   }
-  
-  .social__link:hover {
-    opacity: 0.8
-  }
 }
 
 .footer__copyright {
@@ -49,5 +45,11 @@
 
   .footer .social__link + .footer .social__link {
     margin-left: 15px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .footer {
+    max-width: 1400px;
   }
 }
