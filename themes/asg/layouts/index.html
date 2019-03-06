@@ -52,10 +52,11 @@
     </section>
 
     <section class="speakers" id="speakers">
+      {{ if and (isset .Site.Data.speakers "speakers") (gt (len .Site.Data.speakers.speakers) 0) }} 
       <h2 class="speakers__title page-title">Featured speakers</h2>        
       <div class="speakers__swiper-container">
         <div class="speakers__list swiper-wrapper">
-          {{ if and (isset .Site.Data.speakers "speakers") (gt (len .Site.Data.speakers.speakers) 0) }} 
+          
           {{ with .Site.Data.speakers }}
           {{ range .speakers }}
           <div class="speakers__item swiper-slide">
@@ -70,6 +71,9 @@
           </div>
           {{ end }}
           {{ end }}
+
+          {{ else }}
+            <h2 class="speakers__title speakers__coming-title page-title">Speakers <br />coming soon</h2>
           {{ end }}
         </div>
         <div class="swiper-pagination"></div>

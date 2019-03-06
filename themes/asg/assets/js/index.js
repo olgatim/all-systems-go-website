@@ -196,7 +196,7 @@
   }
 
   $(window).on("resize", function () {
-    if ($("body").hasClass("main-page")) {
+    if ($("body").hasClass("main-page") && $('.speakers__swiper-container').length) {
       initSwiper();
     }
   });
