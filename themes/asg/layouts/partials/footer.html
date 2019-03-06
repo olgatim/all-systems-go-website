@@ -22,8 +22,11 @@
          />
       </symbol>
     </svg>
-  
+
+    {{ if .IsHome }}
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    {{ end }}
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
@@ -36,7 +39,3 @@
     {{ $js := slice $global | resources.Concat "js/bundle.js" }}
     
     <script src="{{ $js.Permalink }}"></script>
-
-</body>
-
-</html>

@@ -59,7 +59,7 @@
     width: 90%;
     height: 50%;
     top: 25%;
-    left: 5;
+    left: 5%;
     background-color: $colorRed;
     z-index: -1;
 
@@ -118,6 +118,11 @@
   .conduct__link:focus {
     outline: none;
   }
+
+  .conduct__link {
+    letter-spacing: 1px;
+    padding: 2px 26px;
+  }
 }
 
 @include media-breakpoint-down(xs) {
@@ -127,6 +132,7 @@
   }
   .conduct__wrapper {
     order: 1;
+    margin-right: 0;
   }
   .conduct__title {
     position: absolute;
@@ -135,12 +141,20 @@
   }
   .conduct__link {
   padding: 0 20px;
+  letter-spacing: 2px;
   }
   .conduct__photo-wrapper {
     margin: 0 auto 30px;
   }
   .conduct__description {
     max-width: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .conduct__link {
+    width: 100%;
+    letter-spacing: 1px;
   }
 }
 

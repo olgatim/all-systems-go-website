@@ -83,7 +83,7 @@
     width: 90%;
     height: 50%;
     top: 25%;
-    left: 5;
+    left: 5%;
     background-color: $colorBlue;
     z-index: -1;
 
@@ -143,6 +143,11 @@
   .participation__link:focus {
     outline: none;
   }
+
+  .participation__link {
+    letter-spacing: 1px;
+    padding: 2px 26px;
+  }
 }
 
 @include media-breakpoint-down(xs) {
@@ -175,7 +180,15 @@
   }
   .participation__link {
     padding: 0 20px;
+    letter-spacing: 2px;
     }
+}
+
+@media (max-width: 350px) {
+  .participation__link {
+    width: 100%;
+    letter-spacing: 1px;
+  }
 }
 
 @media (min-width: 2560px) {
