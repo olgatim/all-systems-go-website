@@ -94,7 +94,7 @@
 
 .header__date {
   margin-left: auto;
-  width: 160px;
+  min-width: 160px;
   font-family: $mainFont;
   font-size: 1.6rem;
   color: $colorGold;

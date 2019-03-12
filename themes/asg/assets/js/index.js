@@ -2,6 +2,7 @@
 
   function particlesJSInit() {
     particlesJS("particles-js", {
+      "fps_limit": 30,
       "particles": {
         "number": {
           "value": 100,
@@ -116,24 +117,9 @@
   if ($("body").hasClass("main-page")) {
     particlesJSInit();
 
-
     const DESKTOP_SCREEN_WIDTH = 1024;
 
-    // swiper gallery
-
-    function initGallerySwiper() {
-      let swiper = new Swiper(".look-back__swiper-container", {
-        slidesPerView: "auto",
-        spaceBetween: 50,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false
-        },
-        speed: 3000
-      });
-    }
-
-    initGallerySwiper();
+    // swiper speakers
 
     let mySwiper = null;
 
@@ -181,8 +167,8 @@
             document.getElementById(id).offsetTop - headerHeight;
 
           $("body, html").animate({
-            scrollTop: scrollingPosition
-          },
+              scrollTop: scrollingPosition
+            },
             1000
           );
 
@@ -192,7 +178,6 @@
         }
       });
     });
-
   }
 
   $(window).on("resize", function () {
@@ -211,15 +196,20 @@
 
     sectionArray.forEach(section => {
       new ScrollMagic.Scene({
-        triggerElement: "#" + section.getAttribute("id"),
-        triggerHook: 0.5,
-        duration: section.offsetHeight
-      })
+          triggerElement: "#" + section.getAttribute("id"),
+          triggerHook: 0.5,
+          duration: section.offsetHeight
+        })
         .setClassToggle(
           `a[href="#${section.getAttribute("id")}"]`,
           "menu__link--active"
         )
         .addTo(controller);
+    });
+
+    // form validation 
+    document.querySelector(".email").addEventListener("input", function () {
+      document.querySelector(".venue__form--button").disabled = !this.validity.valid;
     });
   }
 
