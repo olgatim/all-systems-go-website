@@ -19,9 +19,13 @@ params:
   participationLink: https://cfp.all-systems-go.io
   sponsorshipLink: ""
 
-  hero:
-    eventDate: Sept.28-30, 2019
+  header:
+    eventDate: Sept. 28-30, 2019
     eventPlace: Berlin
+
+  hero:
+    eventDate: September 28-30.2019
+    eventPlace: Venue TBD, Berlin Germany
 
   event: 
     description: All Systems Go! is a conference focused on foundational user-space Linux technologies. Its goal is to provide a
@@ -106,16 +110,6 @@ params:
     description: 2018 was the inaugural edition of All Systems Go!. We welcomed over 200
             attendees for 2 days of talks, discussions and collaborating. We captured some of that in the photos and
             videos below.
-    gallery:
-      - image: conference-photo1.jpg
-      - image: conference-photo2.jpg
-      - image: conference-photo3.jpg
-      - image: conference-photo4.jpg
-      - image: conference-photo5.jpg
-      - image: conference-photo6.jpg
-      - image: conference-photo7.jpg
-      - image: conference-photo8.jpg
-      - image: conference-photo9.jpg
 
   venue:
     description: All Systems Go! takes place in the heart of Berlin at Spreewerkstätten,a short

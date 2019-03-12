@@ -145,8 +145,10 @@
   }
 
   .participation__link {
+    width: 100%;
+    max-width: 280px;
     letter-spacing: 1px;
-    padding: 2px 26px;
+    padding: 0 15px;
   }
 }
 
@@ -180,7 +182,6 @@
   }
   .participation__link {
     padding: 0 20px;
-    letter-spacing: 2px;
     }
 }
 

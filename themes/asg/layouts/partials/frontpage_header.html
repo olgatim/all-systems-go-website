@@ -16,7 +16,10 @@
         {{ end }}
       </ul>
     </nav>
-    <div class="header__date">{{ .Site.Params.Hero.eventDate }} {{ .Site.Params.Hero.eventPlace }}</div>
+    <div class="header__date">
+      <p>{{ .Site.Params.Header.eventDate }}</p> 
+      <p>{{ .Site.Params.Header.eventPlace }}</p>
+    </div>
     <a class="header__button btn btn-simple" href="{{ .Site.Params.ticketsLink }}" target="_blank">Register</a>
   </div>
 </header>
